@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: movie-service
+  datasource:
+    url: jdbc:mysql://mysql:3306/movies_db
+
+movie:
+  cache-ttl-seconds: 300
+  feature:
+    coming-soon-enabled: true
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true

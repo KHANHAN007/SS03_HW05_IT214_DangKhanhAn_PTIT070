@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: showtime-service
+  datasource:
+    url: jdbc:mysql://mysql:3306/showtimes_db
+
+showtime:
+  movie-service-timeout-ms: 2000
+  min-booking-before-minutes: 15
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
